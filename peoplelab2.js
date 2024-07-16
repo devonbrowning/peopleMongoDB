@@ -8,7 +8,7 @@ db.people.insertOne({first_name: 'Ragnar', last_name: 'Lothbrok', email: 'rlothb
 db.people.updateOne({first_name: 'Clarence'}, {$set: {state: 'South Dakota'}});
 
 // 4. Update Rebecca Hayes. Remove her email address.
-db.people.updateOne({first_name: 'Rebecca', last_name: 'Hayes'}, {$unset: {email: ''}});
+db.people.updateOne({first_name: 'Rebecca', last_name: 'Hayes'}, {$unset: {email: 1}});
 
 // 5. Update everyone from Missouri. They all had a birthday today, so add one to their age. (expect 4 matches)
 db.people.updateMany({state: 'Missouri'}, {$inc: {age: 1}});
